@@ -1,5 +1,6 @@
 const {Router} = require('express');
 const router = Router();
+//const multer = require('multer');
 
 module.exports = router;
 
@@ -7,11 +8,12 @@ router.get('/',(req, res) =>{
     res.send('Index page');
 });
 
-router.get('/upload' ,(req, res) =>{
-    res.send('Form');
+router.get('/upload',(req, res) =>{
+    res.render('upload');
 });
 
 router.post('/upload',(req, res)=>{
+    console.log(req.file);
     res.send('uploaded');
 });
 
